@@ -1,0 +1,23 @@
+{
+  "name": "stockinformationscraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyojinkim98/StockInformationScraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyojinkim98/StockInformationScraper/issues"
+  },
+  "homepage": "https://github.com/hyojinkim98/StockInformationScraper#readme",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
