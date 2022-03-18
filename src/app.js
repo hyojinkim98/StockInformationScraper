@@ -1,5 +1,5 @@
 //
-const getData = require("./krx-web-scraper/webScraper");
+const webScraper = require("./krx-web-scraper/webScraper");
 const common = require("./krx-web-scraper/common-const");
 const formatDate = require("./util/utility");
 
@@ -29,10 +29,19 @@ const responseCallback = (response) => {
 date = formatDate(new Date(), "yyyymmdd");
 
 //전종목 기본정보
-// getData(common.BLD_ALL_STOCK_CODE, common.MARKET_ALL, date, stockCodeCallBack);
+// webScraper.getData(common.BLD_ALL_STOCK_CODE, common.MARKET_ALL, date, stockCodeCallBack);
 
 //전종목 현재가
-// getData(common.BLD_ALL_STOCK_PRICE, common.MARKET_ALL, date, responseCallback);
+// webScraper.getData(common.BLD_ALL_STOCK_PRICE, common.MARKET_ALL, date, responseCallback);
 
 //전종목 지정정보
-getData(common.BLD_ALL_STOCK_RISK, common.MARKET_ALL, date, responseCallback);
+//webScraper.getData(common.BLD_ALL_STOCK_RISK, common.MARKET_ALL, date, responseCallback);
+
+//투자자별 거래실적
+webScraper.getDataFromTo(
+  common.BLD_STOCK_AMOUNT_BY_ENTITY,
+  common.MARKET_ALL,
+  date,
+  date,
+  responseCallback
+);
