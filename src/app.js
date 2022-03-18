@@ -1,7 +1,10 @@
 //
-const stockList = require("./krx-web-scraper/webScraper");
+const getData = require("./krx-web-scraper/webScraper");
+const common = require("./krx-web-scraper/common-const");
+const formatDate = require("./util/utility");
 
-const callBack = (response) => {
+//BLD_ALL_STOCK_CODE
+const stockCodeCallBack = (response) => {
   try {
     response.forEach((element) => {
       console.log("종목코드 : " + element.ISU_SRT_CD);
@@ -15,4 +18,18 @@ const callBack = (response) => {
   }
 };
 
-stockList(callBack);
+const responseCallback = (response) => {
+  try {
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+date = formatDate(new Date(), "yyyymmdd");
+
+//전종목 기본정보
+// getData(common.BLD_ALL_STOCK_CODE, common.MARKET_ALL, date, stockCodeCallBack);
+
+//전종목 현재가
+getData(common.BLD_ALL_STOCK_PRICE, common.MARKET_ALL, date, responseCallback);
