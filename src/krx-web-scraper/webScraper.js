@@ -7,7 +7,7 @@ const common = require("./common-const");
 
 const getData = (code, market = common.MARKET_ALL, date, callBack) => {
   if (!code) return;
-  let response;
+
   const options = {
     method: "get",
     url: common.BASE_URL,

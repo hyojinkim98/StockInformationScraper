@@ -32,4 +32,7 @@ date = formatDate(new Date(), "yyyymmdd");
 // getData(common.BLD_ALL_STOCK_CODE, common.MARKET_ALL, date, stockCodeCallBack);
 
 //전종목 현재가
-getData(common.BLD_ALL_STOCK_PRICE, common.MARKET_ALL, date, responseCallback);
+// getData(common.BLD_ALL_STOCK_PRICE, common.MARKET_ALL, date, responseCallback);
+
+//전종목 지정정보
+getData(common.BLD_ALL_STOCK_RISK, common.MARKET_ALL, date, responseCallback);
